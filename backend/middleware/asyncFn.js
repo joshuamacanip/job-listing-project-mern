@@ -1,6 +1,6 @@
 function asyncFn(fn) {
   //Return an async fn controller
-  return async function (req, res, next) {
+  return async (req, res, next) => {
     try {
       //Await for result
       await fn(req, res, next);
