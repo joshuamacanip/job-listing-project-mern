@@ -1,6 +1,6 @@
 const JobListing = require("../model/jobListingModel");
 const asyncFn = require("../middleware/asyncFn");
-const createCustomError = require("../error/custom-error");
+const { createCustomError } = require("../error/custom-error");
 
 //GET controller
 const getJobListingController = asyncFn(async (req, res) => {
@@ -50,7 +50,7 @@ const updateJobListingController = asyncFn(async (req, res, next) => {
 });
 
 //DELETE controller
-const deleteJobListingController = asyncFn(async (req, res) => {
+const deleteJobListingController = asyncFn(async (req, res, next) => {
   //Get document id
   const { id: jobListingID } = req.params;
 

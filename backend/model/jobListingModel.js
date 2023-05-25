@@ -17,11 +17,26 @@ const JobListingSchema = new mongoose.Schema(
         type: String,
       },
     ],
+    overview: {
+      type: String,
+      default:
+        "As a developer your job is to create a minimalist application that cater the needs of our clients.",
+    },
+    typeOfEmployement: {
+      type: String,
+      default: "Full-Time",
+    },
+    skills: [{ type: String }],
+    favorite: {
+      type: Boolean,
+      default: false,
+    },
     description: {
       type: String,
       default:
         "Developed beautiful application that can solve real world problem!",
     },
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
   },
   { timestamps: true }
 );

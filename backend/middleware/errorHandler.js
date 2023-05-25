@@ -1,6 +1,8 @@
 const { CustomError } = require("../error/custom-error");
 
 function errorHandler(err, req, res, next) {
+  console.log(err);
+
   //Check if err object is an instance of custom error
   if (err instanceof CustomError) {
     //Return the a response
